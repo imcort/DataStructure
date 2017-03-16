@@ -2,8 +2,8 @@
 //  main.cpp
 //  DataStructure
 //
-//  Created by 吴子悦 on 2017/3/13.
-//  Copyright © 2017年 吴子悦. All rights reserved.
+//  Created by imcort on 2017/3/13.
+//  Copyright © 2017 imcort. All rights reserved.
 //
 
 #include <iostream>
@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
     SqList sql;
     ListInit_Sq(sql);
     for(int i=1;i<=10;i++)
-        ListInsert_Sq(sql, i, 1); //插入10个数
+        ListInsert_Sq(sql, i, i*i); //插入10个数
     for(int i=0;i<10;i++)
         std::cout<<sql.elem[i]<<std::endl;
     
