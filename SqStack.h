@@ -17,10 +17,22 @@ typedef struct
 
 } SqStack;
 
-Status InitStack(SqStack &S);
+Status InitStack(SqStack &S); //构造一个空栈
+
+//Status DestroyStack(SqStack &S);
+
+//Status ClearStack(SqStack &S);
+
 Status StackEmpty(SqStack S);
-Status Push(SqStack &S, SElemType e);
+
 int StackLength(SqStack S);
-SElemType Pull(SqStack &S);
+
+Status GetTop(SqStack S, SElemType &e);
+
+Status Push(SqStack &S, SElemType e);
+
+Status Pop(SqStack &S, SElemType &e);
+
+//Status StackTransverse(SqStack S, Status (*visit)());
 
 #endif

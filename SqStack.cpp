@@ -13,6 +13,15 @@ Status InitStack(SqStack &S)
     return OK;
 }
 
+Status GetTop(SqStack S, SElemType &e)
+{
+
+    if (S.top == S.base)
+        return ERROR;
+    e = *(S.top - 1);
+    return OK;
+}
+
 Status Push(SqStack &S, SElemType e)
 {
     if (S.top - S.base >= S.stacksize)
@@ -29,15 +38,12 @@ Status Push(SqStack &S, SElemType e)
     return OK;
 }
 
-SElemType Pull(SqStack &S){
-    if (S.top - S.base)
-    {
-        SElemType pullnum = *S.top;
-        S.top--;
-        return pullnum;
-    }
-    else
-        exit(OVERFLOW);
+Status Pop(SqStack &S, SElemType &e)
+{
+     if (S.top == S.base)
+        return ERROR;
+    e = *--S.top;
+    return OK;
 }
 
 Status StackEmpty(SqStack S)
@@ -50,5 +56,5 @@ Status StackEmpty(SqStack S)
 
 int StackLength(SqStack S)
 {
-    return int(S.top-S.base);
+    return int(S.top - S.base);
 }
