@@ -11,6 +11,22 @@
 #include "SqList.h"
 #include "SqStack.h"
 
+void conversion(){
+    SqStack S;
+    InitStack(S);
+    int N;
+    std::cin>>N;
+    while(N){
+        Push(S, N%8);
+        N = N/8;
+    }
+    while(!StackEmpty(S)){
+        int e;
+        Pop(S, e);
+        std::cout<<e;
+    }
+}
+
 int main(int argc, const char * argv[]) {
     SqStack sq;
     InitStack(sq);
@@ -21,8 +37,9 @@ int main(int argc, const char * argv[]) {
         Pop(sq, e);
         std::cout<<e<<',';
     }
-    
+    std::cout<<std::endl<<"Dec to Oct:";
+    conversion();
+    std::cout<<std::endl;
     
     return 0;
-
 }
