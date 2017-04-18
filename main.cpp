@@ -7,11 +7,13 @@
 //
 
 #include <iostream>
-#include "DS.h"
-#include "SqList.h"
-#include "SqStack.h"
+//#include "DS.h"
+//#include "SqList.h"
+////#include "SqStack.h"
+//#include "str.h"
+#include "SparseMtx.h"
 
-void conversion()
+/*void conversion()
 {
     SqStack S;
     InitStack(S);
@@ -29,23 +31,15 @@ void conversion()
         std::cout << e;
     }
 }
+ */
 
 int main(int argc, const char *argv[])
 {
-    SqStack sq;
-    InitStack(sq);
-    for (int i = 1; i <= 50; i++)
-        Push(sq, i * 2); //插入50个数
-    for (int i = 0; i < 50; i++)
-    {
-        int e;
-        Pop(sq, e);
-        std::cout << e << ',';
-    }
-    std::cout << std::endl
-              << "Dec to Oct:";
-    conversion();
-    std::cout << std::endl;
+    TSMatrix K,J;
+    CreateSparseMtx(K, 2, 2, 2);
+    //CreateSparseMtx(J, 2, 2, 2);
+    PrintSparseMtx(K);
+    TransSparseMtx(K, J);
+    PrintSparseMtx(J);
 
-    return 0;
 }
