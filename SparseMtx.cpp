@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstdlib>
-#include "DS.h"
 #include "SparseMtx.h"
 
 using namespace std;
@@ -38,7 +37,8 @@ Status PrintSparseMtx(TSMatrix M)
                 flag = 0;
             else
                 cout << 0;
-            cout << ',';
+            if(j!= M.nu)
+                cout << ',';
         }
         cout << ']' << endl;
     }

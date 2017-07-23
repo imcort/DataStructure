@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include "SqList.h"
-#include "DS.h"
 
 Status ListInit_Sq(SqList &L)
 {

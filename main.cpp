@@ -7,39 +7,35 @@
 //
 
 #include <iostream>
-//#include "DS.h"
-//#include "SqList.h"
-////#include "SqStack.h"
-//#include "str.h"
-#include "SparseMtx.h"
-
-/*void conversion()
-{
-    SqStack S;
-    InitStack(S);
-    int N;
-    std::cin >> N;
-    while (N)
-    {
-        Push(S, N % 8);
-        N = N / 8;
-    }
-    while (!StackEmpty(S))
-    {
-        int e;
-        Pop(S, e);
-        std::cout << e;
-    }
-}
- */
-
+#include "Vertex.h"
+#include "BiTree.h"
+using namespace std;
+/*
 int main(int argc, const char *argv[])
 {
-    TSMatrix K,J;
-    CreateSparseMtx(K, 2, 2, 2);
-    //CreateSparseMtx(J, 2, 2, 2);
-    PrintSparseMtx(K);
-    TransSparseMtx(K, J);
-    PrintSparseMtx(J);
 
+    MGraph G;
+    CreateGraph(G);
+    PrintGraph(G);
+  
+}
+*/
+
+
+int main()
+{
+    BiTree T;
+    cout<<"input preorder string"<<endl;
+    CreateBiTree(T);
+    cout<<"Preorder:";
+    PreOrder(T);
+    cout<<endl;
+    
+    cout<<"Midorder:";
+    MidOrder(T);
+    cout<<endl;
+    
+    cout<<"Postorder:";
+    PostOrder(T);
+    cout<<endl;
 }

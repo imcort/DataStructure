@@ -5,8 +5,8 @@
 Status StrAssign(HString &T, char *chars)
 {
 
-    if (T.ch)
-        free(T.ch);
+    //if (T.ch)
+    //    free(T.ch);
     int i;
     char *c;
     for (i = 0, c = chars; *c; ++i, ++c) //calculate chars length i
@@ -51,8 +51,8 @@ Status SubString(HString &sub, HString S, int pos, int len)
 {
     if (pos < 1 || pos > S.length || len < 0 || len > S.length - pos + 1)
         return ERROR;
-    if (sub.ch)
-        free(sub.ch);
+    //if (sub.ch)
+    //    free(sub.ch);
     if (!len)
     {
         sub.ch = NULL;
@@ -70,21 +70,31 @@ Status SubString(HString &sub, HString S, int pos, int len)
 
 int index(HString S, HString T, int pos)
 {
+    
     int s_length, t_length, i;
     HString sub;
-    if (pos > 0)
+    s_length = StrLength(S);
+    t_length = StrLength(T);
+    i = pos;
+    while (i <= s_length - t_length + 1)
     {
-        s_length = StrLength(S);
-        t_length = StrLength(T);
-        i = pos;
-        while (i <= s_length - t_length + 1)
-        {
-            SubString(sub, S, i, t_length);
-            if (StrCompare(sub, T) != 0)
+       SubString(sub, S, i, t_length);
+       if (StrCompare(sub, T) != 0)
                 ++i;
             else
                 return i;
         }
-    }
+    
     return 0;
+    /*
+    int i=pos;
+    int j=1;
+    while(i<=StrLength(S)&&j<=StrLength(T)){
+        if(S.ch[i]==T.ch[j]){++i;++j;}
+        else {i=i-j+2;j=1;}
+    }
+    if(j>StrLength(T))
+        return i-T.ch[0];
+    else
+        return 0; */
 }

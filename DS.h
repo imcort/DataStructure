@@ -10,6 +10,4 @@
 
 typedef int Status;
 
-
-
 #endif

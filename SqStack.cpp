@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include "SqStack.h"
-#include "DS.h"
 
 Status InitStack(SqStack &S)
 {
@@ -58,3 +57,23 @@ int StackLength(SqStack S)
 {
     return int(S.top - S.base);
 }
+
+/*void conversion()
+{
+    SqStack S;
+    InitStack(S);
+    int N;
+    std::cin >> N;
+    while (N)
+    {
+        Push(S, N % 8);
+        N = N / 8;
+    }
+    while (!StackEmpty(S))
+    {
+        int e;
+        Pop(S, e);
+        std::cout << e;
+    }
+}
+  进制转换*/
